@@ -31,11 +31,12 @@ module.exports.routes = {
   * `assets` directory)                                                      *
   *                                                                          *
   ***************************************************************************/
-  '/':'UserController.mostrar',
-  'post /Agregar': 'UserController.create',
-  'get /Eliminar/:id':'UserController.delete',
-  'get /Editar/:id':'UserController.edit',
-  'post /Actualizar':'UserController.update'
+  '/':'AlumnoController.mostrar',
+  'post /Agregaralumno': 'AlumnoController.create',
+  'get /Eliminaralumno/:id':'AlumnoController.delete',
+  'get /Editaralumno/:id':'AlumnoController.edit',
+  'post /Actualizaralumno':'AlumnoController.update',
+  '/aprobado': 'AlumnoController.aprobado',
 
   /***************************************************************************
   *                                                                          *

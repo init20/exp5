@@ -1,0 +1,82 @@
+<div class="container-fluid">
+  <div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">Alumnos</h3>
+  </div>
+  <div class="panel-body">
+    <button class="btn btn-success" data-toggle="modal" data-target="#myModal">Agregar nuevo alumno</button> 
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Edad</th>
+          <th>Promedio</th>
+          <th>Aprobado</th>
+          <th>Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% _.each(alumnos, function(alumno) { %>
+      <tr>
+        <td><%= alumno.nombre %></td>
+        <td><%= alumno.apellido %></td>
+        <td><%= alumno.edad %></td>
+        <td><%= alumno.promedio %></td>
+        
+        <td>aprobado  </td>
+        </script> 
+        </td>
+        <td><a class="btn btn-primary" href="/Editaralumno/<%=alumno.id%>">Editar promedio</a>
+          <a class="btn btn-danger" href="/Eliminaralumno/<%=alumno.id%>">Eliminar</a>
+        </td>
+      </tr>
+ 
+      <% }) %>  
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+  <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Agregar nuevo alumno</h4>
+      </div>
+      <div class="modal-body">
+        <form method="POST" action="/Agregaralumno">
+          <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" class="form-control" name="nombre" required="true">
+          </div>  
+          <div class="form-group">  
+            <label>Apellido</label>
+            <input type="text" class="form-control" name="apellido" required="true">
+          </div>
+          <div class="form-group">
+            <label>Edad</label>
+            <input type="text" class="form-control" name="edad" required pattern="[0-9]{1,2}" title="La edad no debe ser negativa">
+          </div>
+          <div class="form-group">
+            <label>Promedio</label>
+            <input type="number" min="1" max="7" step="0.1" class="form-control" name="promedio" required pattern ="[1-7]{1,2}" title="El promedio debe ser desde 1.0 hasta 7.0, ej: 5.5">
+          </div>
+          <input type="submit" name="">
+        </form>
+      </div>
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>    
+
+
+</div>

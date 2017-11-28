@@ -1,0 +1,22 @@
+<div class="container-fluid">
+	<div class="row">
+		<h1>Editar Promedio</h1>
+		<div class="col-md-6">
+			<form method="post" action="/Actualizaralumno">
+					<input type="hidden" name="id" value="<%=alumno[0].id%>">
+
+		        	<div class="form-group">
+			        	<label>Nombre alumno:
+			        	<%=alumno[0].nombre%> <%=alumno[0].apellido%>	
+
+			        	</label>
+			        	<input value="<%=alumno[0].promedio%>" type="number" min="1" max="7" step="0.1" class="form-control" name="promedio" required pattern ="[1-7]{1,2}" title="El promedio debe ser desde 1.0 hasta 7.0, ej: 5.5" class="form-control" name="promedio">
+			        </div>	
+
+		        	<div class="form-group">
+		        		<input type="submit" class="btn btn-success" name="editar">
+		        	</div>
+		    </form>
+       </div> 
+	</div>
+</div>
